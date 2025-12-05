@@ -7,6 +7,7 @@ import { ImageCanvas } from './components/ImageCanvas';
 import { HistoryPanel } from './components/HistoryPanel';
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
 import { useAppStore } from './store/useAppStore';
+import { I18nProvider } from './i18n/I18nProvider';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -59,7 +60,9 @@ function AppContent() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <AppContent />
+      <I18nProvider>
+        <AppContent />
+      </I18nProvider>
     </QueryClientProvider>
   );
 }
