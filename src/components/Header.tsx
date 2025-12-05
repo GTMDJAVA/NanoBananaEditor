@@ -30,16 +30,16 @@ export const Header: React.FC = () => {
         <div className="flex items-center space-x-2">
           <Select.Root value={lang} onValueChange={(value) => setLang(value as any)}>
             <Select.Trigger className="inline-flex items-center px-2 h-8 bg-gray-800 text-gray-200 rounded border border-gray-700 text-xs">
-              <Select.Value />
+              <Select.Value placeholder={t('lang.switch')} />
             </Select.Trigger>
             <Select.Portal>
               <Select.Content className="z-50 bg-gray-900 border border-gray-700 rounded shadow-lg">
                 <Select.Viewport className="p-1">
                   <Select.Item value="en" className="px-2 py-1 text-sm text-gray-200 rounded hover:bg-gray-800 cursor-pointer">
-                    {t('lang.en')}
+                    <Select.ItemText>{t('lang.en')}</Select.ItemText>
                   </Select.Item>
                   <Select.Item value="zh" className="px-2 py-1 text-sm text-gray-200 rounded hover:bg-gray-800 cursor-pointer">
-                    {t('lang.zh')}
+                    <Select.ItemText>{t('lang.zh')}</Select.ItemText>
                   </Select.Item>
                 </Select.Viewport>
               </Select.Content>
